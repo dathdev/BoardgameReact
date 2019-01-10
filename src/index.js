@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Table from './Components/table';
+import BoardComponent from './Components/board';
+import Game, { Board } from './Models/Game';
 
 var sample_board = [
     ['o', 'x', 'x', '', 'x'],
@@ -14,18 +15,20 @@ var sample_board = [
 class App extends Component {
     constructor(props) {
         super(props);
-        this.handleTableClick = this.handleTableClick.bind(this);
+        this.handleBoardClick = this.handleBoardClick.bind(this);
+        this._game = new Game(10, 10, 'x');
         // this.state = {};
     }
 
-    handleTableClick(clickedSquare) {
+    handleBoardClick(clickedSquare) {
         console.log(clickedSquare);
         var x = clickedSquare[0], y = clickedSquare[1];
-        if (sample_board[x][y] === ''){
-            sample_board[x][y] = 'x';
-        } else {
-            sample_board[x][y] = '';
-        }
+        this._game.play(x,y);
+        // if (this._game.board.board[x][y] === ''){
+        //     this._game.board.board[x][y] = 'x';
+        // } else {
+        //     this._game.board.board[x][y] = '';
+        // }
         this.setState({});
     }
 
@@ -33,7 +36,12 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>Caro</h1>
-                <Table width={5} height={5} board={sample_board} onTableClick={this.handleTableClick}/>
+                <BoardComponent 
+                    width={this._game.board.width} 
+                    height={this._game.board.height} 
+                    board={this._game.board.board} 
+                    onBoardClick={this.handleBoardClick}
+                />
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './square.css';
 
-class Square extends Component {
+class SquareComponent extends Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
@@ -21,4 +21,4 @@ class Square extends Component {
     }
 }
 
-export default Square;
+export default SquareComponent;
