@@ -1,3 +1,17 @@
+# Caro game
+
+## Introduction
+
+- This is an implementation of the classic Caro game (also called [Gomoku](https://en.wikipedia.org/wiki/Gomoku), or Five in a row).
+
+- This project is created for the sake of learning AI, so I do not expect to release it as an online game.
+
+## Rules
+
+- There are many variations to the game. In this game, I only implemented the basic free-style gomoku, which you can win with 5 or more stones in a row. For more variations, check out [Gomoku Wiki page](https://en.wikipedia.org/wiki/Gomoku).
+
+## Technical stuff
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
